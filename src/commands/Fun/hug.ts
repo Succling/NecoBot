@@ -16,9 +16,7 @@ module.exports ={
     usage: '`b!hug <user>`',
     cooldown: 0,
     execute(message){
-        
-        mentionedUser = message.mentions.users.first();
-
+    
         const huggedUser = message.content.slice(6);
 
         if(!huggedUser) return message.reply('What, you wanna hug yourself, nya?');

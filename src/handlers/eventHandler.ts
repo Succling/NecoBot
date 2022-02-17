@@ -1,17 +1,16 @@
 const fs = require('fs');
 const path = require('path');
-
-module.exports = (client, Discord) =>{
+module.exports = (client: any, Discord: any) =>{
 console.log('Going into eventCollection.js');
-    const loadEventDirs = (dirs) => {
+    const loadEventDirs = (dirs:string) => {
 
-        const eventFiles = fs.readdirSync(path.join(__dirname, `../events/${dirs}`)).filter(file => file.endsWith('.js'));
+        const eventFiles = fs.readdirSync(path.join(__dirname, `../events/${dirs}`)).filter((file: string) => file.endsWith('.js'));
 
         for(const file of eventFiles){
 
             const event = require(path.join(__dirname, `../events/${dirs}/${file}`));
 
-            client.on(event.name, (...args) => event.execute(...args, client, Discord));      
+            client.on(event.name, (...args: any) => event.execute(...args, client, Discord));      
             
         }
 

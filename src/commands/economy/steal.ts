@@ -1,5 +1,4 @@
 const profileModel = require('../../models/profileSchema');
-const functions = require('../../functions')
 
 module.exports = {
     name: 'steal',

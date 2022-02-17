@@ -1,8 +1,6 @@
-const profileModel = require('./models/profileSchema');
-
 module.exports = {
 
-    async checkDBProfileExists(discordUserID){
+    async checkDBProfileExists(discordUserID:number){
 
         let discordUserDBProfile = await profileModel.findOne( {userID: discordUserID} );
 

@@ -1,6 +1,3 @@
-
-const {MessageEmbed} = require('discord.js')
-
 module.exports ={
     name: 'server',
     description: 'Returns various infos about the Guild.',
@@ -12,10 +9,10 @@ module.exports ={
         let guild = message.guild;
         if(guild.available){
 
-        description = guild.description;
+            var description = guild.description;
 
         if(guild.description === null){
-            description = 'No description set';
+           description = 'No description set';
         }
             const serverEmbed = new MessageEmbed()
              .setColor('RANDOM')

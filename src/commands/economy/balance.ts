@@ -1,6 +1,3 @@
-const { MessageEmbed } = require('discord.js');
-const functions = require('../../functions');
-
 module.exports = {
     name: 'balance',
     description: 'Checks your current balance.',
@@ -11,6 +8,8 @@ module.exports = {
 
         const mentionedUser = message.mentions.members.first();
 
+        var user;
+
         if(!mentionedUser){
 
             user = message.author;
@@ -20,7 +19,7 @@ module.exports = {
             user = mentionedUser.user;
 
         }
-            userProfile = await functions.checkDBProfileExists(user.id);
+            const userProfile = await functions.checkDBProfileExists(user.id);
 
             const balanceEmbed = new MessageEmbed()
 

@@ -1,5 +1,3 @@
-const { MessageEmbed } = require('discord.js')
-
 module.exports ={
     name: 'info',
     description: 'Displays info about the message author, if someone is mentioned it shows their info instead.',
@@ -12,14 +10,14 @@ module.exports ={
 
         if(!mentionedUser){
 
-            user = message.author;
+            var user = message.author;
 
         }else{
             
-            user = mentionedUser.user
+            var user = mentionedUser.user
         }
             
-            infoEmbedAuthor = new MessageEmbed()
+            const infoEmbedAuthor = new MessageEmbed()
             .setColor('RANDOM')
             .setTitle(`Info about user ${user.username}`)
             .setThumbnail(user.avatarURL())

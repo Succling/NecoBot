@@ -6,7 +6,7 @@ require('dotenv').config(); //Need to import dotenv to use my TOKEN variable
     client.userCooldowns = new Set();
     client.commands = new Discord.Collection();
 
-    [ 'connectDBHandler', 'commandHandler', 'eventHandler' ].forEach(handler => {
+    [ 'connectDBHandler.ts', 'commandHandler.ts', 'eventHandler.ts' ].forEach(handler => {
         require(`./handlers/${handler}`)(client, Discord);
     });
 

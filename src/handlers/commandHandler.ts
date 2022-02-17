@@ -1,13 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-
 module.exports = (client) =>{
  
     console.log('Going into commandCollection');
 
-    const loadCommandDirs = (dirs) =>{ 
+    const loadCommandDirs = (dirs:string) =>{ 
 
-        const commandFiles = fs.readdirSync(path.join(__dirname, `../commands/${dirs}`)).filter(file => file.endsWith('.js'));
+        const commandFiles = fs.readdirSync(path.join(__dirname, `../commands/${dirs}`)).filter((file: string) => file.endsWith('.js'));
 
         for(const file of commandFiles){
             const command = require(path.join(__dirname, `../commands/${dirs}/${file}`)); 

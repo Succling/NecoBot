@@ -1,5 +1,3 @@
-const mongoose = require('mongoose');
-
 const profileSchema = new mongoose.Schema({
     userID: { type: String, require: true, unique: true},
     level: { type: Number, default: 1},

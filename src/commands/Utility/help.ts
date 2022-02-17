@@ -1,5 +1,3 @@
-const { MessageEmbed } = require('discord.js');
-
 module.exports={
     name: 'help',
     description: 'Displays all available commands and their description.',
@@ -7,7 +5,7 @@ module.exports={
     cooldown: 0,
     execute(message, client){
         
-        const commandArrayFull = Array.from(client.commands.values());
+        const commandArrayFull: any = Array.from(client.commands.values());
         const commandArrayNames = new Array(commandArrayFull.length);
 
         const helpQuery = message.content.slice(7);

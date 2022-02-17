@@ -1,8 +1,6 @@
 require('dotenv').config();
 
 const imageSearch = require('image-search-google');
-const { MessageEmbed, MessageActionRow } = require('discord.js');
-
 const googleClient = new imageSearch(process.env.CSE_ID, process.env.GOOGLE_KEY);
 
 

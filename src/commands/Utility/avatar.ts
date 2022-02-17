@@ -1,5 +1,3 @@
-const {MessageEmbed} = require("discord.js")
-
 module.exports = {
     name: 'avatar',
     description: 'Gets your current Avatar, or if you mention someone, theirs.',
@@ -12,10 +10,11 @@ module.exports = {
 
         if(!mentionedUser){
 
-            user = message.author;
+            var user = message.author;
 
         }else{
-            user = mentionedUser.user
+            
+            var user = mentionedUser.user
         }
         const profileEmbed = new MessageEmbed()
                 .setColor('RANDOM')

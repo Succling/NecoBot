@@ -1,15 +1,5 @@
 require('dotenv').config();
 
-const { MessageEmbed } = require('discord.js')
-
-const Tenor = require("tenorjs").client({
-    'Key': process.env.TENOR_KEY,
-    'Filter': 'off',
-    'Locale': 'en_US',
-    'MediaFilter': 'minimal',
-    'DateFormat': 'D/MM/YYYY - H:mm:ss A'
-})
-
 module.exports ={
     name: 'randgif',
     description: 'Displays a random query gif from Tenor.',
